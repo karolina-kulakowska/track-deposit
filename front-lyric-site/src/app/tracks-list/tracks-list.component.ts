@@ -11,15 +11,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TracksListComponent implements OnInit {
 
-  tracks: Observable<Track[]>;
+  tracks: Track[];
 
   constructor(private trackService: TrackServiceService) { }
 
   ngOnInit(): void {
   }
 
-  getAllTracksList(): Observable<Track[]>{
-    return this.tracks = this.trackService.getAllTracks();
+  getAllTracksList(): void{
+    this.trackService.getAllTracks().subscribe(answer => {
+      console.log('answer: ', answer);
+      this.tracks = answer;
+    });
   }
 
 }

@@ -1,1 +1,20 @@
-<p>tracks-list works!</p>
+
+
+<h2>Track List:</h2>
+
+<button type="button" class="btn btn-success" (click)="getAllTracksList()">getAllTrack</button>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Lyrics</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let track of tracks">
+      <td>{{ track.title }}</td>
+      <td>{{ track.lyrics }}</td>
+    </tr>
+  </tbody>
+</table>

@@ -14,10 +14,10 @@ export class TrackServiceService {
   constructor(private httpClient: HttpClient) { }
 
   getAllTracks(): Observable<Track[]> {
-    return this.httpClient.get<Track[]>('${this.mainUrl}');
+    return this.httpClient.get<Track[]>(`${this.mainUrl}`);
   }
 
   addTrack(track: Track): Observable<Track> {
-    return this.httpClient.post<Track>('${this.mainUrl}' + '/addTrack', track);
+    return this.httpClient.post<Track>(`${this.mainUrl}` + `/addTrack`, track);
   }
 }
