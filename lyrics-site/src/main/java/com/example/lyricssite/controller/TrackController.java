@@ -21,15 +21,29 @@ public class TrackController {
         return trackService.getAllTracks();
     }
 
-    @PostMapping("/tracks/addTrack")
-    public Track addTrack(@RequestBody Track track) {
-        return trackService.saveTrack(track);
-    }
-
     @GetMapping("/tracks/{id}")
     public Optional<Track> getTrackById(@PathVariable String id){
         return trackService.getTrackById(id);
     }
 
+    @PostMapping("/tracks/addTrack")
+    public Track addTrack(@RequestBody Track track) {
+        return trackService.saveTrack(track);
+    }
+
+
+    /**
+     *
+     * Need to fix
+     */
+    @PutMapping("/tracks/{id}")
+    public Track updateTrack(@PathVariable String id, @RequestBody Track track){
+        return trackService.updateTrack(id, track);
+    }
+
+    @DeleteMapping("/tracks/{id}")
+    public Track deleteTrack(@PathVariable String id){
+        return trackService.deleteTrack(id);
+    }
 
 }
