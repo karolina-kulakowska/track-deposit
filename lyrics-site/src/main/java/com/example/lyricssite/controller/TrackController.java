@@ -1,8 +1,13 @@
 package com.example.lyricssite.controller;
 
+import com.example.lyricssite.exceptions.TrackAlreadyExistsException;
+import com.example.lyricssite.exceptions.TrackNotFoundException;
+import com.example.lyricssite.exceptions.TrackUpdateNotAllowedException;
 import com.example.lyricssite.model.Track;
 import com.example.lyricssite.service.TrackService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,28 +22,28 @@ public class TrackController {
     private TrackService trackService;
 
     @GetMapping("/tracks")
-    public List<Track> getAllTracks(){
-        return trackService.getAllTracks();
+    public ResponseEntity<List<Track>> getAllTracks(){
+        return ResponseEntity.ok(trackService.getAllTracks());
     }
 
     @GetMapping("/tracks/{id}")
-    public Optional<Track> getTrackById(@PathVariable String id){
-        return trackService.getTrackById(id);
+    public ResponseEntity<Track> getTrackById(@PathVariable String id){
+        return ResponseEntity.ok(trackService.getTrackById(id).orElseThrow(TrackNotFoundException::new));
     }
 
     @PostMapping("/tracks/addTrack")
-    public Track addTrack(@RequestBody Track track) {
-        return trackService.saveTrack(track);
+    public ResponseEntity<Track> addTrack(@RequestBody Track track) {
+        return new ResponseEntity<Track>(trackService.saveTrack(track).orElseThrow(TrackAlreadyExistsException::new), HttpStatus.CREATED);
     }
 
 
     /**
-     *
      * Need to fix
      */
-    @PutMapping("/tracks/{id}")
-    public Track updateTrack(@PathVariable String id, @RequestBody Track track){
-        return trackService.updateTrack(id, track);
+    @PatchMapping("/tracks/{id}")
+    public ResponseEntity<Track> updateTrack(@PathVariable String id, @RequestBody Track track){
+       //return ResponseEntity.ok(trackService.updateTrack(id, track));
+        return ResponseEntity.ok(trackService.updateTrack(id, track).orElseThrow(TrackUpdateNotAllowedException::new));
     }
 
     @DeleteMapping("/tracks/{id}")

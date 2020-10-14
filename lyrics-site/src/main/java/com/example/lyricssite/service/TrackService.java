@@ -19,32 +19,45 @@ public class TrackService {
         return trackRepository.findAll();
     }
 
-    public Track saveTrack(Track track){
-        return trackRepository.save(track);
+    public Optional<Track> saveTrack(Track track){
+        return Optional.of(trackRepository.save(track));
     }
 
     public Optional<Track> getTrackById(String id) {
         return trackRepository.findById(id);
     }
 
-    public Track updateTrack(String id, Track track) {
-//        Optional<Track> existingTrack = Optional.ofNullable(trackRepository.findById(id)
-//                .orElseThrow(() -> new TrackNotFoundException()));
-//        track.setLyrics(track.getLyrics());
-//        track.setTitle(track.getTitle());
+    public Optional<Track> updateTrack(String id, Track track) {
+        Optional<Track> existingTrack = Optional.ofNullable(trackRepository.findById(id)
+                .orElseThrow(TrackNotFoundException::new));
+
+        Track tr = existingTrack.get();
+        tr.setArtist(track.getArtist());
+        tr.setTitle(track.getTitle());
+        return Optional.of(trackRepository.save(tr));
+
+//        Track trackTemporary = trackRepository.findById(id)
+//                .orElseThrow(TrackNotFoundException::new);
+//
+//        trackTemporary.setTitle(track.getTitle());
+//        trackTemporary.setLyrics(track.getLyrics());
+//
 //        return trackRepository.save(track);
-        Track trackTemporary = trackRepository.findById(id)
-                .orElseThrow(() -> new TrackNotFoundException());
-
-        trackTemporary.setTitle(track.getTitle());
-        trackTemporary.setLyrics(track.getLyrics());
-
-        return trackRepository.save(track);
+//        if (id.equals(track.getId())){
+//            Optional<Track> trackInDataBase = trackRepository.findById(id);
+//            if (trackInDataBase.isPresent()){
+//                return Optional.of(trackRepository.save(track));
+//            } else  {
+//                return  Optional.empty();
+//            }
+//        } else {
+//            throw new CannotUpdateTrackException();
+//        }
     }
 
     public Track deleteTrack(String id) {
         Track trackTemporary = trackRepository.findById(id)
-                .orElseThrow(() -> new TrackNotFoundException());
+                .orElseThrow(TrackNotFoundException::new);
         trackRepository.deleteById(id);
         return trackTemporary;
     }

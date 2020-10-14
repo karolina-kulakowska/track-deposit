@@ -11,20 +11,16 @@ public class Track {
     @Id
     private String id;
     private String title;
-    private String lyrics;
+    private String artist;
 
-    public Track(String id, String title, String lyrics) {
+    public Track(String id, String title, String artist) {
         this.id = id;
         this.title = title;
-        this.lyrics = lyrics;
+        this.artist = artist;
     }
 
     public String getId() {
         return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getTitle() {
@@ -35,11 +31,24 @@ public class Track {
         this.title = title;
     }
 
-    public String getLyrics() {
-        return lyrics;
+    public String getArtist() {
+        return artist;
     }
 
-    public void setLyrics(String lyrics) {
-        this.lyrics = lyrics;
+    public void setArtist(String artist) {
+        this.artist = artist;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Track track = (Track) o;
+        return id.equals(track.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }

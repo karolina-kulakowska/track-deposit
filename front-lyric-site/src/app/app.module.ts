@@ -7,6 +7,9 @@ import { TracksListComponent } from './tracks-list/tracks-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { AddNewTrackComponent } from './add-new-track/add-new-track.component';
+
+
 
 
 
@@ -14,7 +17,8 @@ import { AppRoutingModule } from './app-routing.module';
 @NgModule({
   declarations: [
     AppComponent,
-    TracksListComponent
+    TracksListComponent,
+    AddNewTrackComponent
   ],
   imports: [
     BrowserModule,

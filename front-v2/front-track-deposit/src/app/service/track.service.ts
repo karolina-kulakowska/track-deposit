@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class TrackServiceService {
+export class TrackService {
 
   private mainUrl = 'http://localhost:8090/api/tracks';
 
@@ -15,10 +15,6 @@ export class TrackServiceService {
 
   getAllTracks(): Observable<Track[]> {
     return this.httpClient.get<Track[]>(`${this.mainUrl}`);
-  }
-
-  addTrack(track: Track): Observable<Track> {
-    return this.httpClient.post<Track>(`${this.mainUrl}` + `/addTrack`, track);
   }
 
 }

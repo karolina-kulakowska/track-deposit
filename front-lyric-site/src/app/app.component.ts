@@ -10,6 +10,8 @@ import { TrackServiceService } from './services/track-service.service';
 export class AppComponent {
   title = 'front-lyric-site';
 
+  public tracks: Track[];
+
   // tracks: Track[];
   // constructor(private trackService: TrackServiceService) { }
 
