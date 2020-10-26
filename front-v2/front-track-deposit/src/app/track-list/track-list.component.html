@@ -1,7 +1,8 @@
 
 <div class="container">
 
-  <button type="button" class="btn btn-success" (click)="getAllTracks()">Show Track list</button>
+  <button type="button" class="btn btn-success" style="margin:5px;" (click)="getAllTracks()">Show Track list</button>
+  <button type="button" class="btn btn-primary" style="margin:5px;" (click)="goToAddTrack()">Add track</button>
   <br><br>
   <table class="table table-striped table-dark">
     <thead>
@@ -9,7 +10,7 @@
         <th scope="col">#</th>
         <th scope="col">Artist</th>
         <th scope="col">Title</th>
-        <th scope="col">Lyrics</th>
+        <th scope="col">Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -17,7 +18,10 @@
         <th scope="row">{{i+1}}</th>
         <td>{{track.artist}}</td>
         <td>{{track.title}}</td>
-        <td><button type="button" class="btn btn-success">Show lyrics</button></td>
+        <td><button type="button" class="btn btn-success" style="margin:5px;"> <fa-icon [icon]="icons.plusIcon"></fa-icon> </button>
+          <button type="button" class="btn btn-warning" style="margin:5px;" (click)="deleteTrack(track)"> <fa-icon [icon]="icons.trashIcon"></fa-icon> </button>
+          <button type="button" class="btn btn-info" style="margin:5px;"> <fa-icon [icon]="icons.fileAudioIcon"></fa-icon> </button>
+        </td>
       </tr>
     </tbody>
   </table>
