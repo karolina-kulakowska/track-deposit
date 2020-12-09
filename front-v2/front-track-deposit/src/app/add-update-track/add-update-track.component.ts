@@ -45,6 +45,6 @@ export class AddUpdateTrackComponent implements OnInit {
   }
 
   goBackFromCreate() {
-    this.router.navigate(['']);
+    this.router.navigate(['/tracks']);
   }
 }

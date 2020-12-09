@@ -1,5 +1,5 @@
-<p>add-update-track works!</p>
 
+<h3 class="text-info">Fill in the form, then press save: </h3><br>
 <div class="center">
 <form [formGroup]="trackForm">
   <div class="form-row">
@@ -15,9 +15,9 @@
 
 
 
-    <button type="submit" class="btn btn-primary" style="margin:5px;" (click)="onSubmit()" (click)="saveTrack(trackForm.value)">
+    <button type="submit" class="btn btn-warning" style="margin:5px;" (click)="onSubmit()" (click)="saveTrack(trackForm.value)">
       Save
-    </button> <button type="button" class="btn btn-info" style="margin:5px;" [routerLink]="['/']">Back</button>
+    </button> <button type="button" class="btn btn-dark" style="margin:5px;" [routerLink]="['/']">Back</button>
     <br>
 
 
