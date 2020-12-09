@@ -120,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "front-track-deposit"
+    }
+  },
+  "defaultProject": "front-track-deposit",
+  "cli": {
+    "analytics": "599c5af3-cb80-42f7-9c28-cc4749befd7d"
+  }
 }
