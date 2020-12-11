@@ -48,16 +48,16 @@ export class AddUpdateTrackComponent implements OnInit {
     this.router.navigate(['/tracks']);
   }
 
-  update(track: Track): void {
-    console.log('[add-update-trackComponent] Try to update track: ', track);
-    this.trackService.updateTrack(track).subscribe(
-      answer => {
-        this.goBackFromCreate();
-      }, 
-      error => {
-        console.error('[add-update-trackComponent] update error', error);
-        alert('[add-update-trackComponent] update error \n' + JSON.stringify(error));
-      }
-    );
-  }
+  // update(track: Track): void {
+  //   console.log('[add-update-trackComponent] Try to update track: ', track);
+  //   this.trackService.updateTrack(track).subscribe(
+  //     answer => {
+  //       this.goBackFromCreate();
+  //     }, 
+  //     error => {
+  //       console.error('[add-update-trackComponent] update error', error);
+  //       alert('[add-update-trackComponent] update error \n' + JSON.stringify(error));
+  //     }
+  //   );
+  // }
 }

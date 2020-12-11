@@ -18,6 +18,10 @@ export class TrackService {
     return this.httpClient.get<Track[]>(`${this.mainUrl}`);
   }
 
+  getTrackById(id: string): Observable<Track> {
+    return this.httpClient.get<Track>(`${this.mainUrl}/${id}`);
+  }
+
   deleteTrackById(id: string): Observable<Track> {
     console.log(`[TrackService] in deleteTrackById(${id})`);
     return this.httpClient.delete<Track>(`${this.mainUrl}/${id}`);
@@ -30,12 +34,14 @@ export class TrackService {
 
   updateTrack(track: Track): Observable<Track> {
     console.log('[TrackService] in updateTrack()', track);
-    if(track.id) {
-      return this.httpClient.patch<Track>(`${this.mainUrl}/${track.id}`, track);
-    } else {
-      // this shouldn't happen
-      alert('Cannot update track');
-      throw new Error('Cannot update track');
-    }
+    console.log(track.id);
+    return this.httpClient.patch<Track>(`${this.mainUrl}/${track.id}`, track);
+    // if(track.id) {
+    //   return this.httpClient.patch<Track>(`${this.mainUrl}/${track.id}`, track);
+    // } else {
+    //   // this shouldn't happen
+    //   alert('Cannot update track');
+    //   throw new Error('Cannot update track');
+    // }
   }
 }

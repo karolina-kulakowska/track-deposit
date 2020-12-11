@@ -7,13 +7,15 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppComponent } from './app.component';
 import { TrackListComponent } from './track-list/track-list.component';
 import { AddUpdateTrackComponent } from './add-update-track/add-update-track.component';
+import { UpdateTrackComponent } from './update-track/update-track.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     TrackListComponent,
-    AddUpdateTrackComponent
+    AddUpdateTrackComponent,
+    UpdateTrackComponent
   ],
   imports: [
     BrowserModule,
