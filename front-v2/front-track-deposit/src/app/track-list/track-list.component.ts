@@ -33,6 +33,10 @@ export class TrackListComponent implements OnInit {
     this.router.navigate(['/tracks/addTrack']);
   }
 
+  goToEditTrack(): void {
+    this.router.navigate(['/tracks/edit']);
+  }
+
 
   getAllTracks(): void {
     this.trackService.getAllTracks().subscribe(answer => {
@@ -52,7 +56,7 @@ export class TrackListComponent implements OnInit {
 
   editTrack(track: Track): void {
     console.log('clicked on edit track: ', track.artist + ' ' + track.title);
-    this.router.navigate(['/tracks/addTrack']);
+    this.router.navigate(['/tracks/edit']);
   }
 
 }
