@@ -1,7 +1,7 @@
 import { TrackService } from './../service/track.service';
 import { Component, OnInit } from '@angular/core';
 import { Track } from './../model/track.model';
-import { faFileAudio, faPlusCircle, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faEdit, faFileAudio, faPlusCircle, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
 
 @Component({
@@ -17,6 +17,7 @@ export class TrackListComponent implements OnInit {
     plusIcon: faPlusCircle,
     trashIcon: faTrashAlt,
     fileAudioIcon: faFileAudio,
+    editIcon: faEdit,
   };
 
   constructor(
@@ -47,6 +48,11 @@ export class TrackListComponent implements OnInit {
         this.tracks = this.tracks.filter(tr => tr.id !== answer.id);
       }
     );
+  }
+
+  editTrack(track: Track): void {
+    console.log('clicked on edit track: ', track.artist + ' ' + track.title);
+    this.router.navigate(['/tracks/addTrack']);
   }
 
 }

@@ -27,4 +27,15 @@ export class TrackService {
     console.log('[TrackService] in createTrack', track);
     return this.httpClient.post<Track>(`${this.mainUrl}/addTrack`, track);
   }
+
+  updateTrack(track: Track): Observable<Track> {
+    console.log('[TrackService] in updateTrack()', track);
+    if(track.id) {
+      return this.httpClient.patch<Track>(`${this.mainUrl}/${track.id}`, track);
+    } else {
+      // this shouldn't happen
+      alert('Cannot update track');
+      throw new Error('Cannot update track');
+    }
+  }
 }
