@@ -10,7 +10,7 @@ const routes: Routes = [
   // { path: '', component: AppComponent },
   { path: 'tracks/addTrack', component: AddUpdateTrackComponent },
   { path: 'tracks', component: TrackListComponent },
-  { path: 'tracks/edit', component: UpdateTrackComponent },
+  { path: 'tracks/edit/:id', component: UpdateTrackComponent },
 ];
 
 @NgModule({

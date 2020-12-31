@@ -56,7 +56,8 @@ export class TrackListComponent implements OnInit {
 
   editTrack(track: Track): void {
     console.log('clicked on edit track: ', track.artist + ' ' + track.title);
-    this.router.navigate(['/tracks/edit']);
+    console.log('track id: ', track.id);
+    this.router.navigate(['/tracks/edit', track.id]);
   }
 
 }
