@@ -6,3 +6,11 @@ body {
   font-size: 88px;
   color: orange;
 }
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #333;
+  color:#fff;
+}
