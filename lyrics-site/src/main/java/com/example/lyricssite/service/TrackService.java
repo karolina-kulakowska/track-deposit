@@ -36,23 +36,6 @@ public class TrackService {
         tr.setTitle(track.getTitle());
         return Optional.of(trackRepository.save(tr));
 
-//        Track trackTemporary = trackRepository.findById(id)
-//                .orElseThrow(TrackNotFoundException::new);
-//
-//        trackTemporary.setTitle(track.getTitle());
-//        trackTemporary.setLyrics(track.getLyrics());
-//
-//        return trackRepository.save(track);
-//        if (id.equals(track.getId())){
-//            Optional<Track> trackInDataBase = trackRepository.findById(id);
-//            if (trackInDataBase.isPresent()){
-//                return Optional.of(trackRepository.save(track));
-//            } else  {
-//                return  Optional.empty();
-//            }
-//        } else {
-//            throw new CannotUpdateTrackException();
-//        }
     }
 
     public Track deleteTrack(String id) {
