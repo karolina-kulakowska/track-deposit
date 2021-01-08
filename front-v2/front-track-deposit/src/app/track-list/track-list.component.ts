@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { Track } from './../model/track.model';
 import { faEdit, faFileAudio, faPlusCircle, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
   selector: 'app-track-list',
@@ -12,6 +14,7 @@ import { Router } from '@angular/router';
 export class TrackListComponent implements OnInit {
 
   tracks: Track[];
+  closeResult: string;
 
   icons = {
     plusIcon: faPlusCircle,
@@ -23,6 +26,7 @@ export class TrackListComponent implements OnInit {
   constructor(
     private trackService: TrackService,
     private router: Router,
+    private modalService: NgbModal,
     ) { }
 
   ngOnInit(): void {
@@ -60,4 +64,7 @@ export class TrackListComponent implements OnInit {
     this.router.navigate(['/tracks/edit', track.id]);
   }
 
+  openScrollableContent(longContent) {
+    this.modalService.open(longContent, { scrollable: true });
+  }
 }

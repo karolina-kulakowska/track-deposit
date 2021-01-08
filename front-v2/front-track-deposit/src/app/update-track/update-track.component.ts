@@ -16,7 +16,8 @@ export class UpdateTrackComponent implements OnInit {
   track: Track = {
     id: undefined,
     artist: undefined,
-    title: undefined
+    title: undefined,
+    lyrics: undefined
   };
   public trackId;
   
@@ -37,7 +38,8 @@ export class UpdateTrackComponent implements OnInit {
       this.trackForm = this.fb.group({
         id: this.activatedRouter.snapshot.paramMap.get('id'),
         artist: '',
-        title: ''
+        title: '',
+        lyrics: ''
       });
     }
 
