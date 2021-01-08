@@ -34,6 +34,7 @@ public class TrackService {
         Track tr = existingTrack.get();
         tr.setArtist(track.getArtist());
         tr.setTitle(track.getTitle());
+        tr.setLyrics(track.getLyrics());
         return Optional.of(trackRepository.save(tr));
 
     }

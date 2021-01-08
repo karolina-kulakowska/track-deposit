@@ -29,8 +29,8 @@ public class TrackServiceTest {
     @Test
     @DisplayName("Test getAllTracks")
     void testGetAllTracks() {
-        Track track1 = new Track("1abc", "Track1 title", "Track1 artist");
-        Track track2 = new Track("2abc", "Track2 title", "Track2 artist");
+        Track track1 = new Track("1abc", "Track1 title", "Track1 artist", "abcd2");
+        Track track2 = new Track("2abc", "Track2 title", "Track2 artist", "abcd2");
         Mockito.doReturn(Arrays.asList(track1,track2)).when(trackRepository).findAll();
 
         List<Track> tracks = trackService.getAllTracks();
@@ -41,7 +41,7 @@ public class TrackServiceTest {
     @Test
     @DisplayName("Test saveTrack")
     void testSaveTrack() {
-        Track track = new Track("1abc", "Track title", "Track artist");
+        Track track = new Track("1abc", "Track title", "Track artist", "abcd");
         Mockito.doReturn(track).when(trackRepository).save(ArgumentMatchers.any());
 
         Optional<Track> returnedTrack = trackService.saveTrack(track);
