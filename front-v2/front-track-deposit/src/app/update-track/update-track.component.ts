@@ -13,6 +13,7 @@ import { error } from '@angular/compiler/src/util';
 export class UpdateTrackComponent implements OnInit {
 
   trackForm: FormGroup;
+ 
   track: Track = {
     id: undefined,
     artist: undefined,
@@ -31,8 +32,11 @@ export class UpdateTrackComponent implements OnInit {
 
     ngOnInit(): void {
       this.initializeForm();
+      console.log('trying to update: ', this.track.artist + ' ' + this.track.title);
+      this.fetchTrack(this.activatedRouter.snapshot.paramMap.get('id'));
       // this.track.id = this.activatedRouter.snapshot.paramMap.get('id');
     }
+    
 
     initializeForm(): void {
       this.trackForm = this.fb.group({
@@ -45,16 +49,6 @@ export class UpdateTrackComponent implements OnInit {
 
   goBackFromToTrackList() {
     this.router.navigate(['/tracks']);
-  }
-
-  fetchTrack(id: string): void {
-    this.trackService.getTrackById(id).subscribe(
-      answer => {
-        this.trackForm.setValue(answer);
-      }, error => {
-        alert('Cannot load track' + JSON.stringify(error));
-      }
-    );
   }
 
   update(track: Track): void {
@@ -70,4 +64,14 @@ export class UpdateTrackComponent implements OnInit {
     );
   }
 
+ fetchTrack(id: string): void {
+    this.trackService.getTrackById(id).subscribe(
+      answer => {
+        this.trackForm.setValue(answer);
+        console.log('fetching track: ', answer);
+      }, error => {
+        alert('Cannot load track' + JSON.stringify(error));
+      }
+    );
+  }
 }

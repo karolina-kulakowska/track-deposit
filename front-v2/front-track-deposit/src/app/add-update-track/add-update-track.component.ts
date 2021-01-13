@@ -26,7 +26,8 @@ export class AddUpdateTrackComponent implements OnInit {
   initializeForm(): void {
     this.trackForm = this.fb.group({
       artist: '',
-      title: ''
+      title: '',
+      lyrics: ''
     });
   }
 

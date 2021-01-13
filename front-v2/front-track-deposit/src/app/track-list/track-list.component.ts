@@ -6,11 +6,14 @@ import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 
+
+
 @Component({
   selector: 'app-track-list',
   templateUrl: './track-list.component.html',
   styleUrls: ['./track-list.component.css']
 })
+
 export class TrackListComponent implements OnInit {
 
   tracks: Track[];
@@ -67,4 +70,9 @@ export class TrackListComponent implements OnInit {
   openScrollableContent(longContent) {
     this.modalService.open(longContent, { scrollable: true });
   }
+
+  openLg(content) {
+    this.modalService.open(content, { size: 'lg' });
+  }
+  
 }
