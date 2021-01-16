@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { TrackListComponent } from './track-list/track-list.component';
 import { AddUpdateTrackComponent } from './add-update-track/add-update-track.component';
 import { UpdateTrackComponent } from './update-track/update-track.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { UpdateTrackComponent } from './update-track/update-track.component';
     ReactiveFormsModule,
     FontAwesomeModule,
     AppRoutingModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

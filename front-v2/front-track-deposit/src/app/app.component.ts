@@ -4,6 +4,9 @@ import { faFileAudio, faMusic, faQuoteLeft, faQuoteRight, faTrashAlt } from '@fo
 import { faNapster } from '@fortawesome/free-brands-svg-icons';
 
 
+
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,6 +15,7 @@ import { faNapster } from '@fortawesome/free-brands-svg-icons';
 export class AppComponent {
   title = 'front-track-deposit';
   logoimage: string = "assets/img/logo.jpg";
+
 
   icons = {
     quoteLeft: faQuoteLeft,
@@ -27,4 +31,5 @@ export class AppComponent {
   goToAllTrackList() {
     this.router.navigate(['/tracks']);
   }
+
 }

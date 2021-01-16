@@ -1,5 +1,7 @@
+
 body {
-  padding-top: 56px;
+  /* padding-top: 56px; */
+  margin-bottom:60px;
 }
 
 .cat-logo{
@@ -8,9 +10,19 @@ body {
 }
 
 footer {
-  position: absolute;
-  bottom: 0;
+  position:relative;
+  bottom:0;
   width: 100%;
+  height: 50px;
+  
+  
+  /* position:relative; 
+  bottom: 0;
+  left:0;
+  width: 100%;
+  height: 50px;
   background-color: #333;
-  color:#fff;
+  color:#fff; */
 }
+
+

@@ -1,5 +1,5 @@
 
-<h3 class="text-info">Enter new values to edit track, then press save: </h3><br>
+<h3 class="text-info">Enter new values to edit track: </h3><br>
 <div class="center">
     
 <form [formGroup]="trackForm">
@@ -12,6 +12,10 @@
       <label for="title">Title</label>
       <input type="text" class="form-control" formControlName="title" id="title" placeholder="enter the title">
     </div>
+    <div class="form-group col-md-10">
+      <label for="lyrics">Lyrics</label>
+      <textarea type="text" class="form-control" formControlName="lyrics" id="lyrics" placeholder="enter the lyrics" rows="3" wrap="hard"></textarea>
+    </div>
   </div>
 
 
@@ -19,7 +23,7 @@
       Save changes
     </button> <button type="button" class="btn btn-dark" style="margin:5px;" [routerLink]="['/tracks']">Back</button>
     <br>
-
+    <!-- <input type="text" class="form-control" formControlName="lyrics" id="lyrics" placeholder="enter the lyrics"> -->
 
 </form>
 </div>
