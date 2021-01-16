@@ -59,6 +59,7 @@ export class TrackListComponent implements OnInit {
         this.tracks = this.tracks.filter(tr => tr.id !== answer.id);
       }
     );
+    this.router.navigate(['/tracks']);
   }
 
   editTrack(track: Track): void {

@@ -63,7 +63,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-light" (click)="modal.close('Close click')">No, go back</button>
-            <button type="button" class="btn btn-danger" (click)="deleteTrack(track)">Yes, delete anyway</button>
+            <button type="button" class="btn btn-danger" (click)="deleteTrack(track); modal.close('Close click');">Yes, delete anyway</button>
           </div>
         </ng-template>
 
