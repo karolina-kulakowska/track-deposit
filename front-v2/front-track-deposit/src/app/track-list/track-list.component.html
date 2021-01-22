@@ -18,17 +18,20 @@
         <td>{{track.title}}</td>
         <td>
           <!-- BUTTONS for EDIT, DELETE, LYRICS -->
-          <button type="button" class="btn btn-success" style="margin:5px;" (click)="editTrack(track)">
+          <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" style="margin:5px;" title="Click to edit track" 
+          (click)="editTrack(track)">
             <fa-icon [icon]="icons.editIcon"></fa-icon>
           </button> 
-          <button type="button" class="btn btn-warning" style="margin:5px;" (click)="openLg(content)" >
+          <button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" style="margin:5px;" title="Click to delete track"
+          (click)="openLg(content)">
             <fa-icon [icon]="icons.trashIcon"></fa-icon>
           </button>
-          <button type="button" class="btn btn-info" style="margin:5px;" (click)="openScrollableContent(longContent)">
+          <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="top" style="margin:5px;" title="Click to show lyrics"
+           (click)="openScrollableContent(longContent)">
             <fa-icon [icon]="icons.fileAudioIcon"></fa-icon>
           </button>
         </td>
-        <!-- MODAL for LYRICS (click)="openLg(content)" (click)="deleteTrack(track)" -->
+        <!-- MODAL for LYRICS  -->
 
         <ng-template #longContent let-modal>
           <div class="modal-header">

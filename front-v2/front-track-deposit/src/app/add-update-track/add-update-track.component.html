@@ -1,34 +1,33 @@
-
 <h3 class="text-info">Fill the form, then press save: </h3><br>
 <div class="center">
-<form [formGroup]="trackForm">
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="artist">Artist</label>
-      <input type="text" class="form-control" formControlName="artist" id="artist" placeholder="enter the artist">
+
+  <form [formGroup]="trackForm" >
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="artist"><b>Artist</b></label>
+        <input type="text" class="form-control" formControlName="artist" id="artist" placeholder="enter the artist">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="title"><b>Title</b></label>
+        <input type="text" class="form-control" formControlName="title" id="title" placeholder="enter the title">
+      </div>
+      <div class="form-group col">
+        <label for="lyrics"><b>Lyrics</b></label>
+        <textarea type="text" class="form-control" formControlName="lyrics" id="lyrics" placeholder="enter the lyrics"
+          rows="3" wrap="hard"></textarea>
+      </div>
     </div>
-    <div class="form-group col-md-6">
-      <label for="title">Title</label>
-      <input type="text" class="form-control" formControlName="title" id="title" placeholder="enter the title">
-    </div>
-    <div class="form-group col-md-10">
-      <label for="lyrics">Lyrics</label>
-      <!-- <input type="text" class="form-control" formControlName="lyrics" id="lyrics" placeholder="enter the lyrics" style="white-space: pre-line"> -->
-      <textarea type="text" class="form-control" formControlName="lyrics" id="lyrics" placeholder="enter the lyrics" rows="3" wrap="hard"></textarea>
-    </div>
-  </div>
 
 
 
-    <button type="submit" class="btn btn-warning" style="margin:5px;" (click)="onSubmit()" (click)="saveTrack(trackForm.value)">
+    <button type="submit" class="btn btn-warning" style="margin:5px;" (click)="onSubmit()"
+      (click)="saveTrack(trackForm.value)">
       Save
     </button> <button type="button" class="btn btn-dark" style="margin:5px;" [routerLink]="['/tracks']">Back</button>
     <br>
 
 
-</form>
+  </form>
 </div>
 
 <br>
-
-
