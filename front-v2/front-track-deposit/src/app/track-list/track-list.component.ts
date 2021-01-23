@@ -1,7 +1,7 @@
 import { TrackService } from './../service/track.service';
 import { Component, OnInit } from '@angular/core';
 import { Track } from './../model/track.model';
-import { faEdit, faFileAudio, faPlusCircle, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faEdit, faFileAudio, faPlusCircle, faSearch, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
@@ -24,6 +24,7 @@ export class TrackListComponent implements OnInit {
     trashIcon: faTrashAlt,
     fileAudioIcon: faFileAudio,
     editIcon: faEdit,
+    searchIcon: faSearch,
   };
 
   constructor(
