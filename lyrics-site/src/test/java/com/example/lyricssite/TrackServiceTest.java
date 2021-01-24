@@ -46,8 +46,26 @@ public class TrackServiceTest {
 
         Optional<Track> returnedTrack = trackService.saveTrack(track);
 
-        Assertions.assertNotNull(returnedTrack, "The saved track should not be null");
         Assertions.assertEquals(Optional.of(track), returnedTrack);
     }
 
+    @Test
+    @DisplayName("Test saveTrack case: track is null")
+    void testSaveTrackWhenTrackIsNull() {
+        Track track = new Track("1abc", "Track title", "Track artist", "abcd");
+        Mockito.doReturn(track).when(trackRepository).save(ArgumentMatchers.any());
+
+        Optional<Track> returnedTrack = trackService.saveTrack(track);
+
+        Assertions.assertNotNull(returnedTrack, "The saved track should not be null");
+    }
+
+    @Test
+    @DisplayName("Test getTrackById")
+    void testGetTrackById() {
+        Track track = new Track("1abc", "Track title", "Track artist", "abcd");
+        Mockito.doReturn(track).when(trackRepository).findById(track.getId());
+
+
+    }
 }
