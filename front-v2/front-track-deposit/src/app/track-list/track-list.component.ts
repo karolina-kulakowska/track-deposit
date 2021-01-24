@@ -69,6 +69,7 @@ export class TrackListComponent implements OnInit {
     this.router.navigate(['/tracks/edit', track.id]);
   }
 
+
   openScrollableContent(longContent) {
     this.modalService.open(longContent, { scrollable: true });
   }

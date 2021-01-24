@@ -44,4 +44,9 @@ export class TrackService {
     //   throw new Error('Cannot update track');
     // }
   }
+
+  findLyricsFromExternalApi(artist: string, title: string): Observable<Track> {
+    console.log('[TrackService] in findLyricsFromExternalApi()')
+    return this.httpClient.get<Track>(`https://api.lyrics.ovh/v1/${artist}/${title}`)
+  }
 }

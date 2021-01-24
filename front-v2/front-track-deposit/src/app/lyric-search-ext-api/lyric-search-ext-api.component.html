@@ -1,0 +1,33 @@
+<h5>Enter artist and title to search for lyrics:</h5> <br>
+
+<form [formGroup]="trackForm" >
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="artist"><b>Artist</b></label>
+        <input type="text" class="form-control" formControlName="artist" id="artist" placeholder="enter the artist">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="title"><b>Title</b></label>
+        <input type="text" class="form-control" formControlName="title" id="title" placeholder="enter the title">
+      </div>
+    </div>
+
+
+
+    <button type="submit" class="btn btn-warning" style="margin:5px;" (click)="findLyrics(trackForm.value.artist, trackForm.value.title); clicked()">
+      Find lyrics
+    </button> <button type="button" class="btn btn-dark" style="margin:5px;" [routerLink]="['/tracks']">Back</button>
+    <br>
+    <br>
+</form>
+
+
+  <div *ngIf="buttonClicked" style="clear:both; width:100%; text-align: center;  border-style: solid; border-color: yellow;">
+    <h5>Here is your song lyrics:</h5>
+    <div wrap="hard" style="white-space: pre-line">
+        <p>{{track.lyrics}}</p>
+      </div>
+    </div>
+
+
+

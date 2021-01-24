@@ -9,6 +9,7 @@ import { TrackListComponent } from './track-list/track-list.component';
 import { AddUpdateTrackComponent } from './add-update-track/add-update-track.component';
 import { UpdateTrackComponent } from './update-track/update-track.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LyricSearchExtApiComponent } from './lyric-search-ext-api/lyric-search-ext-api.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AppComponent,
     TrackListComponent,
     AddUpdateTrackComponent,
-    UpdateTrackComponent
+    UpdateTrackComponent,
+    LyricSearchExtApiComponent
   ],
   imports: [
     BrowserModule,

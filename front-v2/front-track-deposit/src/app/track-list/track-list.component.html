@@ -1,6 +1,9 @@
 <div class="container">
   <button type="button" class="btn btn-success" style="margin:5px;" (click)="getAllTracks()">Show track list</button>
   <button type="button" class="btn btn-primary" style="margin:5px;" (click)="goToAddTrack()">Add track</button>
+  <button type="button" class="btn btn-outline-primary" [routerLink]="['/tracks/find-lyrics']" style="margin:5px;" title="Click to search for lyrics">
+    Find lyrics <fa-icon [icon]="icons.searchIcon"></fa-icon>
+  </button>
   <br><br>
   <table class="table table-striped table-dark">
     <thead>
@@ -30,9 +33,7 @@
            (click)="openScrollableContent(longContent)">
             <fa-icon [icon]="icons.fileAudioIcon"></fa-icon>
           </button>
-          <button type="button" class="btn btn-outline-primary" [routerLink]="['/']" style="margin:5px;" title="Click to search for lyrics">
-            <fa-icon [icon]="icons.searchIcon"></fa-icon>
-          </button>
+          
         </td>
         <!-- MODAL for LYRICS  -->
 

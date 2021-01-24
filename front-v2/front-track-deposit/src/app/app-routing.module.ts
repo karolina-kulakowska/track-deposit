@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { TrackListComponent } from './track-list/track-list.component';
 import { UpdateTrackComponent } from './update-track/update-track.component';
+import { LyricSearchExtApiComponent } from './lyric-search-ext-api/lyric-search-ext-api.component';
 
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'tracks/addTrack', component: AddUpdateTrackComponent },
   { path: 'tracks', component: TrackListComponent },
   { path: 'tracks/edit/:id', component: UpdateTrackComponent },
+  { path: 'tracks/find-lyrics', component: LyricSearchExtApiComponent },
 ];
 
 @NgModule({
